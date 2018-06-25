@@ -1,0 +1,22 @@
+<%= form_for @user,url:users_path,html: {multipart:true} do |f| %>
+   <div>
+     <label>头像：</label><br>
+     <%= file_field_tag :image %>
+     <div id="avatar_preview"></div>
+   </div>
+    <%= f.submit "提交" %>
+    <iframe name="avatar_preview" style="display: none"></iframe>
+<% end %>
+<script>
+    $(function () {
+       $('#image').on('change',function () {
+           var original_action = this.form.action;
+           this.form.target = "avatar_preview";
+           this.form.action = "/users/avatar_preview";
+           this.form.submit();
+           this.form.action = original_action;
+           this.form.target = 'self';
+
+       })
+   })
+</script>
