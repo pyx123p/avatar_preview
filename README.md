@@ -3,7 +3,7 @@
 preview image before upload without using any plugins
 
 <h1>In Models User.rb</h1>
-<h2>write a methods to save the image file:</h2> 
+<h2 color:blue>write a methods to save the image file:</h2> 
 <h4>
    def self.set_avatar_path(file)<br>
     &nbsp;&nbsp;file_name = file.original_filename<br>
@@ -21,7 +21,7 @@ preview image before upload without using any plugins
   end<br>
 </h4>
 <h1>In views users/new.html.erb</h1>
- <h2>change the form's action to preview the image</h2>
+ <h2 color:blue>change the form's action to preview the image</h2>
  <h4><script><br>
     &nbsp;&nbsp;$(function () {<br>
        &nbsp;&nbsp;&nbsp;&nbsp;$('#image').on('change',function () {<br>
